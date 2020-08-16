@@ -1,3 +1,30 @@
 .App {
   margin: 0;
 }
+
+#rest-container {
+  /* border: solid grey; */
+  height: 80vh;
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+
+#maps-container {
+  /* border: solid green; */
+  height: 80vh;
+}
+
+#safe-eats {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+#search {
+  margin-left: 20px;
+  /* height: 100%;
+  width: 100% */
+}
+
+#results {
+  overflow: auto;
+}

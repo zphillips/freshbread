@@ -1,0 +1,9 @@
+.rest {
+    border-bottom: solid 1px black;
+    margin: 0px;
+    padding: 20px;
+}
+
+.covid-rating {
+    color: red;
+}
