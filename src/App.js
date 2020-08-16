@@ -249,8 +249,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <Maps /> */}
-        <h1>Safe Eats</h1>
+        <h1 id='title'>Safe Eats</h1>
         <section id="safe-eats">
           <div id="maps-container">
             <GoogleMap
@@ -291,7 +290,7 @@ function App() {
             </GoogleMap>
           </div>
           <div id="rest-container">
-            <div>
+            <div >
               <Search panTo={panTo} />
               {/* <Locate panTo={panTo} /> */}
             </div>

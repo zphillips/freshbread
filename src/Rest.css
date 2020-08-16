@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Raleway:wght@200&family=Satisfy&display=swap');
+
 .rest {
     border-bottom: solid 1px black;
     margin: 0px;
@@ -5,5 +7,14 @@
 }
 
 .covid-rating {
-    color: red;
+    color:#a40000;
+    font-family: 'Raleway', sans-serif;
+}
+
+.rest-name {
+    font-family: 'Alata', sans-serif;
+}
+
+.rating {
+    font-family: 'Raleway', sans-serif;
 }

@@ -1,17 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Raleway:wght@200&family=Satisfy&display=swap');
+
 .App {
   margin: 0;
 }
 
 #rest-container {
-  /* border: solid grey; */
-  height: 80vh;
+  height: 100vh;
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 3% 97%;
 }
 
 #maps-container {
   /* border: solid green; */
-  height: 80vh;
+  height: 100vh;
 }
 
 #safe-eats {
@@ -20,11 +21,20 @@
 }
 
 #search {
-  margin-left: 20px;
-  /* height: 100%;
-  width: 100% */
+  height: 100%;
+  width: 100%;
 }
 
 #results {
   overflow: auto;
+}
+
+#title {
+  /* top: 10px; */
+  left: 30px;
+  position: absolute;
+  z-index: 2;
+  font-size: 40px;
+  letter-spacing: 5px;
+  font-family: 'Satisfy', cursive;
 }
