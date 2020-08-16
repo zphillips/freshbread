@@ -94,7 +94,7 @@ function App() {
 
   function restData(location, radius) {
       // fetch(proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + loc[0] + "," + loc[1] + "&radius=2000&type=restaurant&business_status=%22OPERATIONAL%22&key=AIzaSyCAPAHIXKeSmyHhvnqB12dLxBavJb4k_rA")
-      fetch(proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + location['lat'] + "," + location['lng'] + "&" + "radius=" + radius + "&type=restaurant&business_status=%22OPERATIONAL%22&key=AIzaSyCAPAHIXKeSmyHhvnqB12dLxBavJb4k_rA")  
+      fetch(proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + location['lat'] + "," + location['lng'] + "&" + "radius=" + radius + "&type=restaurant&business_status=%22OPERATIONAL%22&key=" + process.env.REACT_APP_GOOGLE_MAPS_API_KEY)  
         .then(res => res.json())
         .then(json => {
           // console.log(json.results)
