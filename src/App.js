@@ -98,6 +98,7 @@ function App() {
         .then(res => res.json())
         .then(json => {
           // console.log(json.results)
+          console.log("Rest")
           setRests(json.results)
           json.results.map((rest) => {
             const dict = {"restName": rest.name, "lat": rest.geometry.location.lat, "lng": rest.geometry.location.lng}
@@ -161,10 +162,6 @@ function App() {
               var state = ""
 
               results[0].address_components.map((res) => {
-                // const match = /County/.exec(res)
-                // if (match != null) { county = match }
-                // console.log(/[a-z]+\sCounty/.exec(res))
-                // console.log(res['long_name'].includes("County"))
                 if (res['long_name'].includes("County")) {
                   county = res['long_name']
                 }
@@ -237,10 +234,42 @@ function App() {
             (error) => console.log(error), options)
         }}
       >
-        User Location
+        Get User Location
       </button>
     )
   }
+
+  function Mark() {
+    latlng.map((coord) => {
+      console.log(coord)
+      const position = {}
+      position["lat"] = coord['lat']
+      position['lng'] = coord['lng']
+
+      console.log("Making marker")
+    })
+
+    return null
+  }
+
+  {/* {latlng.map((coord) => {
+                console.log(coord) */}
+                // const position = {}
+                // position["lat"] = coord['lat']
+                // position['lng'] = coord['lng']
+
+                // console.log("Making marker")
+                // return(
+                //   <Marker
+                //     key={placeIds[coord["restName"]]}
+                //     position={position}
+                //     icon={{}}
+                //     onClick={() => {
+                //       setSelected(coord)
+                //     }}
+                //   />
+                // )
+              // })}
 
   
   if (loadError) return "Error Loading Maps"
@@ -249,7 +278,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 id='title'>Safe Eats</h1>
+        <h1 id='title' onClick={Mark}>Safe Eats</h1>
         <section id="safe-eats">
           <div id="maps-container">
             <GoogleMap
@@ -259,25 +288,7 @@ function App() {
             options={options}
             onLoad={onMapLoad}
             >
-              {/* //markers */}
-              {latlng.map((coord) => {
-                const position = {}
-                position["lat"] = coord['lat']
-                position['lng'] = coord['lng']
-
-                console.log("Making marker")
-                
-                // return(
-                // <Marker
-                //   key={placeIds[coord["restName"]]}
-                //   position={position}
-                //   icon={{}}
-                //   onClick={() => {
-                //     setSelected(coord)
-                //   }}
-                // />
-                // )
-              })}
+              {/* <Mark /> */}
               {selected ? <InfoWindow>
                 <div 
                   position={{lat: selected['lat'], lng: selected['lng']}}
@@ -290,9 +301,9 @@ function App() {
             </GoogleMap>
           </div>
           <div id="rest-container">
-            <div >
+            <div id="search-objs">
               <Search panTo={panTo} />
-              {/* <Locate panTo={panTo} /> */}
+              <Locate panTo={panTo} />
             </div>
             <div id="results">
               {rests.map((rest) => {

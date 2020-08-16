@@ -38,3 +38,11 @@
   letter-spacing: 5px;
   font-family: 'Satisfy', cursive;
 }
+
+#search-objs {
+  display: flex;
+}
+
+#locate {
+  width: 200px;
+}
